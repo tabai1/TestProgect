@@ -15,7 +15,7 @@
 <script>
 if(typeof(EventSource) !== "undefined") {
     var source = new EventSource("/");
-	console.log(source);
+	console.log(source+"from git-hub");
     source.onmessage = function(event) {
 	alert('gg')
         document.getElementById("result").innerHTML += event.data + "<br>";
