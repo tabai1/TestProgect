@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TestProject</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+  asdasd
+  <div id="result"></div>
+</body>
+<script>
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("/");
+	console.log(source);
+    source.onmessage = function(event) {
+	alert('gg')
+        document.getElementById("result").innerHTML += event.data + "<br>";
+    };
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
+</script>
+</html>
